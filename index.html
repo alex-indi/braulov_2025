@@ -4,55 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Что если…</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/scrollreveal"></script>
     <style>
-      /* Новый градиент под обложку: тёмно-сине‑бирюзовый → тёмно-янтарный */
+      /* Градиент под обложку: тёмно‑сине‑бирюзовый → тёмно‑янтарный */
       body {
-        background: linear-gradient(
-          135deg,
-          #0a2740 0%,
-          #1a1e2d 40%,
-          #322015 100%
-        );
+        background: linear-gradient(135deg, #0a2740 0%, #1a1e2d 40%, #322015 100%);
       }
-      summary {
-        cursor: pointer;
-      }
-      /* Полупрозрачные карточки с лёгким блюром */
+      summary { cursor: pointer; }
+
+      /* Полупрозрачные карточки */
       .story-card {
-        background: rgba(26, 39, 58, 0.6); /* близко к тёмно-сине‑бирюзовому */
+        background: rgba(26, 39, 58, 0.6);
         backdrop-filter: blur(10px);
       }
     </style>
   </head>
   <body class="text-gray-100 font-sans">
     <div class="max-w-3xl mx-auto py-12 px-4">
-      <div
-        class="w-full max-w-md mx-auto h-auto rounded-2xl mb-8 overflow-hidden shadow-lg"
-      >
-        <img
-          src="Image.jpg"
-          alt="Обложка аудиокниги"
-          class="w-full h-auto object-cover"
-        />
+      <!-- Обложка -->
+      <div class="w-full max-w-md mx-auto h-auto rounded-2xl mb-8 overflow-hidden shadow-lg">
+        <img src="Image.jpg" alt="Обложка аудиокниги" class="w-full h-auto object-cover" />
       </div>
 
       <p class="text-xl text-center mb-10">
-        Три альтернативные реальности, где один человек делает важный выбор.<br>
+        Три альтернативные реальности, где один человек делает важный выбор.<br />
         Послушайте истории и выберите свою любимую
       </p>
 
       <div id="stories" class="space-y-8">
-        <div
-          class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl shadow-xl transform transition duration-500 hover:scale-105"
-        >
-          <h2 class="text-xl font-semibold mb-2">
-            Стал IT-предпринимателем
-          </h2>
+        <!-- === История 1 === -->
+        <div class="story-card p-6 rounded-2xl shadow-xl transform transition duration-500 hover:scale-105">
+          <h2 class="text-xl font-semibold mb-2">Стал IT-предпринимателем</h2>
           <audio controls class="w-full mb-4">
             <source src="audio/Ит-предприниматель.mp3" type="audio/mpeg" />
             Ваш браузер не поддерживает воспроизведение аудио.
@@ -60,7 +43,7 @@
           <details class="text-sm text-gray-200">
             <summary class="mb-1 font-medium">Показать текст истории</summary>
             <div class="mt-2">
-              <p>
+             <p>
                 <strong>2021 год.</strong> Ему 36. Он — заместитель начальника
                 Департамента управления персоналом РЖД, руководит аналитическим
                 отделом. Чёткий ум, спокойствие в голосе, ответственность в
@@ -153,12 +136,9 @@
           </details>
         </div>
 
-        <div
-          class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl shadow-xl transform transition duration-500 hover:scale-105"
-        >
-          <h2 class="text-xl font-semibold mb-2">
-            Родился в 2096 году
-          </h2>
+        <!-- === История 2 === -->
+        <div class="story-card p-6 rounded-2xl shadow-xl transform transition duration-500 hover:scale-105">
+          <h2 class="text-xl font-semibold mb-2">Родился в 2096 году</h2>
           <audio controls class="w-full mb-4">
             <source src="audio/Назначение.mp3" type="audio/mpeg" />
             Ваш браузер не поддерживает воспроизведение аудио.
@@ -233,20 +213,16 @@
           </details>
         </div>
 
-        <div
-          class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl shadow-xl transform transition duration-500 hover:scale-105"
-        >
-          <h2 class="text-xl font-semibold mb-2">
-            Проснулся в другой реальности
-          </h2>
+        <!-- === История 3 === -->
+        <div class="story-card p-6 rounded-2xl shadow-xl transform transition duration-500 hover:scale-105">
+          <h2 class="text-xl font-semibold mb-2">Проснулся в другой реальности</h2>
           <audio controls class="w-full mb-4">
             <source src="audio/Другая реальность.mp3" type="audio/mpeg" />
             Ваш браузер не поддерживает воспроизведение аудио.
           </audio>
           <details class="text-sm text-gray-200">
             <summary class="mb-1 font-medium">Показать текст истории</summary>
-            <div class="mt-2">
-              <p>
+            <div class="mt-2"><p>
                 Он проснулся как обычно — за несколько минут до будильника.
                 Потянулся к телефону — но в руке оказался гладкий, прозрачный
                 прямоугольник. Без кнопок, без логотипов. Внутри — мягкий свет и
@@ -338,19 +314,20 @@
         </div>
       </div>
 
+      <!-- Кнопка копирования ссылки -->
       <div class="flex justify-center mt-10">
-        <button
-          onclick="copyLink()"
-          class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-xl transition duration-300"
-        >
+        <button onclick="copyLink()" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2 px-4 rounded-xl transition duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400">
           Скопировать ссылку 🔗
         </button>
       </div>
 
       <p class="text-center text-sm text-gray-300 mt-12">
-        С любовью и уважением от Вашей команды<br>Центра организации подготовки и развития рабочих ❤️
+        С любовью и уважением от Вашей команды<br />Центра организации подготовки и развития рабочих ❤️
       </p>
     </div>
+
+    <!-- Toast уведомление -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 transform bg-amber-600 text-white px-4 py-2 rounded-xl shadow-lg opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
     <script>
       // Анимация появления карточек
