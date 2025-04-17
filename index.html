@@ -1,88 +1,14 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Что если… | Аудиоистории</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/scrollreveal"></script>
-    <style>
+<style>
+      /* Новый градиент под обложку: тёмно-сине‑бирюзовый → тёмно-янтарный */
       body {
-        background: linear-gradient(to right, #1f0036, #2a0a4d);
+        background: linear-gradient(135deg, #0a2740 0%, #1a1e2d 40%, #322015 100%);
+      }
+      summary {
+        cursor: pointer;
+      }
+      /* Полупрозрачные карточки с лёгким блюром */
+      .story-card {
+        background: rgba(26, 39, 58, 0.6); /* близко к тёмно-сине‑бирюзовому */
+        backdrop-filter: blur(10px);
       }
     </style>
-  </head>
-  <body class="text-gray-100 font-sans">
-    <div class="max-w-3xl mx-auto py-12 px-4">
-      <h1 class="text-5xl font-extrabold text-center mb-4">🎧 Что если…</h1>
-      <p class="text-xl text-center mb-10">Пять альтернативных реальностей, где один человек снова делает важный выбор. Послушайте истории и выберите свою любимую.</p>
-
-      <div id="stories" class="space-y-8">
-        <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl shadow-xl transform transition duration-500 hover:scale-105">
-          <h2 class="text-xl font-semibold mb-2">🎬 Что, если он остался в Ernst & Young?</h2>
-          <audio controls class="w-full">
-            <source src="audio/ernst.mp3" type="audio/mpeg">
-            Ваш браузер не поддерживает воспроизведение аудио.
-          </audio>
-        </div>
-
-        <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl shadow-xl transform transition duration-500 hover:scale-105">
-          <h2 class="text-xl font-semibold mb-2">🎬 Что, если он стал профессором?</h2>
-          <audio controls class="w-full">
-            <source src="audio/professor.mp3" type="audio/mpeg">
-            Ваш браузер не поддерживает воспроизведение аудио.
-          </audio>
-        </div>
-
-        <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl shadow-xl transform transition duration-500 hover:scale-105">
-          <h2 class="text-xl font-semibold mb-2">🎬 Что, если он стал IT-предпринимателем?</h2>
-          <audio controls class="w-full">
-            <source src="audio/startup.mp3" type="audio/mpeg">
-            Ваш браузер не поддерживает воспроизведение аудио.
-          </audio>
-        </div>
-
-        <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl shadow-xl transform transition duration-500 hover:scale-105">
-          <h2 class="text-xl font-semibold mb-2">🚀 Что, если он родился в 2096 году?</h2>
-          <audio controls class="w-full">
-            <source src="audio/future.mp3" type="audio/mpeg">
-            Ваш браузер не поддерживает воспроизведение аудио.
-          </audio>
-        </div>
-
-        <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl shadow-xl transform transition duration-500 hover:scale-105">
-          <h2 class="text-xl font-semibold mb-2">🌀 Что, если он проснулся в другой реальности?</h2>
-          <audio controls class="w-full">
-            <source src="audio/alternate.mp3" type="audio/mpeg">
-            Ваш браузер не поддерживает воспроизведение аудио.
-          </audio>
-        </div>
-      </div>
-
-      <div class="flex justify-center mt-10">
-        <button onclick="copyLink()" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-xl transition duration-300">
-          Скопировать ссылку 🔗
-        </button>
-      </div>
-
-      <p class="text-center text-sm text-gray-300 mt-12">С любовью и уважением от вашей команды ❤️</p>
-    </div>
-
-    <script>
-      ScrollReveal().reveal('#stories > div', {
-        interval: 200,
-        distance: '30px',
-        origin: 'bottom',
-        opacity: 0,
-        easing: 'ease-in-out',
-        reset: false
-      });
-
-      function copyLink() {
-        navigator.clipboard.writeText(window.location.href)
-          .then(() => alert('Ссылка скопирована в буфер обмена!'))
-          .catch(() => alert('Ошибка при копировании ссылки.'));
-      }
-    </script>
-  </body>
-</html>
