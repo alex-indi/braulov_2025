@@ -353,20 +353,33 @@
     </div>
 
     <script>
-      ScrollReveal().reveal("#stories > div", {
+      // Анимация появления карточек
+      ScrollReveal().reveal('#stories > div', {
         interval: 200,
-        distance: "30px",
-        origin: "bottom",
+        distance: '30px',
+        origin: 'bottom',
         opacity: 0,
-        easing: "ease-in-out",
-        reset: false,
+        easing: 'ease-in-out',
+        reset: false
       });
 
+      // Показ пользовательского toast‑уведомления
+      function showToast(message) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.classList.remove('opacity-0');
+        toast.classList.add('opacity-100');
+        setTimeout(() => {
+          toast.classList.remove('opacity-100');
+          toast.classList.add('opacity-0');
+        }, 3000);
+      }
+
+      // Копирование ссылки
       function copyLink() {
-        navigator.clipboard
-          .writeText(window.location.href)
-          .then(() => alert("Ссылка скопирована в буфер обмена!"))
-          .catch(() => alert("Ошибка при копировании ссылки."));
+        navigator.clipboard.writeText(window.location.href)
+          .then(() => showToast('Ссылка скопирована в буфер обмена!'))
+          .catch(() => showToast('Ошибка при копировании ссылки.'));
       }
     </script>
   </body>
